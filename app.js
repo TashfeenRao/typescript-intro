@@ -106,3 +106,43 @@ formSubmit.addEventListener('submit', function (e) {
     greetings.innerText = person.greet();
     formSubmit.reset();
 });
+function doSome(arg) {
+    return arg;
+}
+doSome('hiii'); // it will add string type to arg
+doSome(2); // it will add number type to arg
+doSome('hiii');
+var bookb = {
+    id: 1,
+    name: 'some thing',
+    data: 'some randome data',
+};
+var bookb2 = {
+    id: 1,
+    name: 'some thing',
+    data: 32,
+};
+var bookb3 = {
+    id: 1,
+    name: 'some thing',
+    data: ['name1', 'name2'],
+};
+// const bookb4: book<number> = {
+//     id: 1,
+//     name: 'some thing',
+//     data: 'hi there' we cannot do that as it is
+// }
+var manufacturer;
+(function (manufacturer) {
+    manufacturer[manufacturer["AUDI"] = 0] = "AUDI";
+    manufacturer[manufacturer["TESLA"] = 1] = "TESLA";
+    manufacturer[manufacturer["BMW"] = 2] = "BMW";
+    manufacturer[manufacturer["VOLKSWAGON"] = 3] = "VOLKSWAGON";
+    manufacturer[manufacturer["KIYA"] = 4] = "KIYA";
+    manufacturer[manufacturer["TOYATA"] = 5] = "TOYATA";
+})(manufacturer || (manufacturer = {}));
+var myCar = {
+    year: 2021,
+    make: manufacturer.TESLA,
+};
+console.log(myCar.make);

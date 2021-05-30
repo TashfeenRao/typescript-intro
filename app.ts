@@ -140,3 +140,57 @@ formSubmit.addEventListener('submit', (e) => {
     greetings.innerText = person.greet()
     formSubmit.reset()
 })
+
+function doSome<T>(arg: T) {
+    return arg
+}
+
+doSome('hiii') // it will add string type to arg
+doSome(2) // it will add number type to arg
+doSome<string>('hiii')
+// doSome<string>(2) we cannot do that as we are defining number
+
+interface book<T> {
+    id: number
+    name: string
+    data: T
+}
+
+const bookb: book<string> = {
+    id: 1,
+    name: 'some thing',
+    data: 'some randome data',
+}
+const bookb2: book<number> = {
+    id: 1,
+    name: 'some thing',
+    data: 32,
+}
+
+const bookb3: book<string[]> = {
+    id: 1,
+    name: 'some thing',
+    data: ['name1', 'name2'],
+}
+
+// const bookb4: book<number> = {
+//     id: 1,
+//     name: 'some thing',
+//     data: 'hi there' we cannot do that as it is
+// }
+
+enum manufacturer {
+    AUDI,
+    TESLA,
+    BMW,
+    VOLKSWAGON,
+    KIYA,
+    TOYATA,
+}
+
+const myCar = {
+    year: 2021,
+    make: manufacturer.TESLA,
+}
+
+console.log(myCar.make)
